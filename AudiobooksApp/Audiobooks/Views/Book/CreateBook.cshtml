@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "CreateBook";
+}
+
+<h2>Книга была создана. Пожалуйста, загрузите обложку:</h2>
+
+
+<form method="post" action="/Book/Cover/@Model" , enctype="multipart/form-data">
+    <input type="file" name="uploadFile" />
+    <input type="submit" name="Submit" id="Submit" value="Upload" />
+</form>
+

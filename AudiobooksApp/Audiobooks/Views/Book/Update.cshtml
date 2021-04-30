@@ -1,0 +1,22 @@
+﻿@model Audiobooks.Models.BookPostModel
+
+@{
+    ViewBag.Title = "Изменить книгу";
+}
+
+@using (Html.BeginForm("Update", "Book", FormMethod.Post))
+{
+    <h1>Пожалуйста, заполните поля:</h1>
+    <p>Новое название книги: @Html.TextBoxFor(x => x.Name)</p>
+    <br>
+    <p>Новый ID автора книги: @Html.TextBoxFor(x => x.AuthorId)</p>
+    <br>
+    <p>Новый ID жанра: @Html.TextBoxFor(x => x.GenreId)</p>
+    <br>
+    <p>Новая цена: @Html.TextBoxFor(x => x.Price)</p>
+    <br>
+    <p>Новый ID чтеца: @Html.TextBoxFor(x => x.ReaderId)</p>
+    <br>
+    <input type="submit" value="Отправить" />
+}
+

@@ -1,0 +1,14 @@
+﻿@model Audiobooks.Models.AuthorPostModel
+
+@{
+    ViewBag.Title = "Добавить автора";
+}
+
+@using (Html.BeginForm("Create", "Author", FormMethod.Post))
+{
+    <h1>Пожалуйста, введите имя автора:</h1>
+    @Html.TextBoxFor(x => x.Name)
+    <br />
+    <input type="submit" value="Отправить" />
+}
+

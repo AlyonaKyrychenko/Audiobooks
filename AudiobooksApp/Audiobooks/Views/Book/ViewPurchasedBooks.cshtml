@@ -1,0 +1,19 @@
+﻿@model Audiobooks.Models.GetPurchaseViewModel
+
+@{
+    ViewBag.Title = "Покупки";
+}
+
+<h1>Ваши покупки:</h1>
+<br />
+<ol>
+    @foreach (var purchase in Model.Purchases)
+    {
+        <li>
+            ID покупки: @purchase.Id<br />
+            ID книги @purchase.BookId<br />
+            <a resource="@purchase.ArchivePath" download="">Скачать книгу</a>
+        </li>
+        <br />
+    }
+</ol>

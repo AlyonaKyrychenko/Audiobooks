@@ -1,0 +1,22 @@
+﻿@model Audiobooks.Models.BookPostModel
+
+@{
+    ViewBag.Title = "Добавить книгу";
+}
+
+@using (Html.BeginForm("CreateBook", "Book", FormMethod.Post))
+{
+    <h1>Пожалуйста, заполните поля:</h1>
+    <p>Название книги: @Html.TextBoxFor(x => x.Name)</p>
+    <br>
+    <p>ID автора книги: @Html.TextBoxFor(x => x.AuthorId)</p>
+    <br>
+    <p>ID жанра: @Html.TextBoxFor(x => x.GenreId)</p>
+    <br>
+    <p>Цена: @Html.TextBoxFor(x => x.Price)</p>
+    <br>
+    <p>ID чтеца: @Html.TextBoxFor(x => x.ReaderId)</p>
+    <br>
+    <input type="submit" value="Отправить" />
+}
+

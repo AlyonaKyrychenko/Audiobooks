@@ -1,0 +1,14 @@
+﻿@model Audiobooks.Models.GenrePostModel
+
+@{
+    ViewBag.Title = "Изменить жанр";
+}
+
+@using (Html.BeginForm("Update", "Genre", FormMethod.Post))
+{
+    <h1>Введите новое название жанра:</h1>
+    @Html.TextBoxFor(x => x.Name)
+    <br />
+    <input type="submit" value="Отправить" />
+}
+

@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "AddArchive";
+}
+
+<h2>Обложка была загружена. Пожалуйста, загрузите архив с книгой:</h2>
+
+
+<form method="post" action="/Book/Archive/@Model" , enctype="multipart/form-data">
+    <input type="file" name="uploadFile" />
+    <input type="submit" name="Submit" id="Submit" value="Upload" />
+</form>

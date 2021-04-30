@@ -1,0 +1,14 @@
+﻿@model Audiobooks.Models.PurchasePostModel
+
+@{
+    ViewBag.Title = "Купить книгу";
+}
+
+@using (Html.BeginForm("Purchase", "Book", FormMethod.Post))
+{
+    <h1>Пожалуйста, введите ID книги, которую хотите купить:</h1>
+    <p>@Html.TextBoxFor(x => x.BookId)</p>
+    <br>
+    <input type="submit" value="Отправить" />
+}
+

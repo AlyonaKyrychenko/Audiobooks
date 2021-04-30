@@ -1,0 +1,20 @@
+﻿@model Audiobooks.Models.GetAuthorsViewModel
+
+@{
+    ViewBag.Title = "Поиск по имени автора";
+}
+
+<h1>Результат поиска по имени автора:</h1>
+<br />
+<ol>
+    @foreach (var author in Model.Authors)
+    {
+        <li>
+            Имя автора: @author.Name
+            @Html.ActionLink("✎", "Update", "Author", new { id = author.Id })
+            @Html.ActionLink("⮾", "Delete", "Author", new { id = author.Id }) <br />
+        </li>
+    }
+</ol>
+<br>
+<h5>Добавить нового автора: @Html.ActionLink("ⴲ", "Create", "Author")</h5>

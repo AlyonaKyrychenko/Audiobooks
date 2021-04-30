@@ -1,0 +1,20 @@
+﻿@model Audiobooks.Models.GetGenresViewModel
+
+@{
+    ViewBag.Title = "Список жанров";
+}
+
+<h1>Все жанры:</h1>
+<br />
+<ol>
+    @foreach (var genre in Model.Genres)
+    {
+        <li>
+            Название: @genre.Name
+            @Html.ActionLink("✎", "Update", "Genre", new { id = genre.Id })
+            @Html.ActionLink("⮾", "Delete", "Genre", new { id = genre.Id }) <br />
+        </li>
+    }
+</ol>
+<br>
+<h5>Добавить новый жанр: @Html.ActionLink("ⴲ", "Create", "Genre")</h5>

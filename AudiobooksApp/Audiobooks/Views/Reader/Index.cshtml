@@ -1,0 +1,20 @@
+﻿@model Audiobooks.Models.GetReadersViewModel
+
+@{
+    ViewBag.Title = "Список чтецов";
+}
+
+<h1>Все чтецы:</h1>
+<br />
+<ol>
+    @foreach (var reader in Model.Readers)
+    {
+        <li>
+            Имя чтеца: @reader.Name
+            @Html.ActionLink("✎", "Update", "Reader", new { id = reader.Id })
+            @Html.ActionLink("⮾", "Delete", "Reader", new { id = reader.Id }) <br />
+        </li>
+    }
+</ol>
+<br>
+<h5>Добавить нового чтеца: @Html.ActionLink("ⴲ", "Create", "Reader")</h5>

@@ -1,0 +1,14 @@
+﻿@model Audiobooks.Models.GenrePostModel
+
+@{
+    ViewBag.Title = "Добавить жанр";
+}
+
+@using (Html.BeginForm("Create", "Genre", FormMethod.Post))
+{
+    <h1>Пожалуйста, введите название жанра:</h1>
+    @Html.TextBoxFor(x => x.Name)
+    <br />
+    <input type="submit" value="Отправить" />
+}
+

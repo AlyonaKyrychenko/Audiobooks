@@ -1,0 +1,27 @@
+﻿@model Audiobooks.Models.GetBooksViewModel
+
+@{
+    ViewBag.Title = "Все книги";
+}
+
+<h1>Все книги:</h1>
+<br />
+<div style="display: inline-block">
+    @foreach (var book in Model.Books)
+    {
+    <div style="display:inline-block; width: 33%; margin: 15px;">
+        ID обложки: @book.CoverIds <br />
+        ID автора: @book.AuthorId<br />
+        ID книги @book.Id<br />
+        Название книги: @book.Name<br>
+        ID жанра: @book.GenreId<br>
+        ID чтеца: @book.ReaderId<br>
+        Стоимость: @book.Price <br>
+        @Html.ActionLink("₴", "Purchase", "Book") 
+        @Html.ActionLink("✎", "Update", "Book", new { id = book.Id }) 
+        @Html.ActionLink("⮾", "Delete", "Book", new { id = book.Id }) <br />
+    </div>
+    }
+</div>
+<br>
+<h5>Добавить новую книгу: @Html.ActionLink("ⴲ", "Create", "Book")</h5>
